@@ -18,9 +18,12 @@ const parentEl = document.querySelector(".gallery");
 
 const imagesEl = images.map(image => {
   const imageEl = `<li><img width="100%" height="100%" src=" ${image.url}" alt="${image.alt}"</li>`;
+  return imageEl;
+}
+);
 
-  parentEl.insertAdjacentHTML("afterbegin", imageEl);
-});
+parentEl.insertAdjacentHTML("afterbegin", imagesEl);
+
 
 parentEl.style.display = "flex";
 
