@@ -11,10 +11,11 @@ const ingredients = [
 const arrayIngrad = document.querySelector("#ingredients")
 
 
-ingredients.forEach(elem => {
-  const text = elem;
-  elem = document.createElement("li");
-  elem.classList.add("item");
-  elem.textContent = text;
-  arrayIngrad.append(elem);
+const ingradient = ingredients.map(elem => {
+  const ingredientsItem = document.createElement("li");
+  ingredientsItem.classList.add("item");
+  ingredientsItem.textContent = elem;
+  return ingredientsItem;
 });
+
+arrayIngrad.append(...ingradient);
